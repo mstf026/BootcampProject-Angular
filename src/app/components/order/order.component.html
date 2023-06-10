@@ -1,7 +1,9 @@
 <ul class="list-group">
-    <li class="list-group-item">An item</li>
-    <li class="list-group-item">A second item</li>
-    <li class="list-group-item">A third item</li>
-    <li class="list-group-item">A fourth item</li>
-    <li class="list-group-item">And a fifth one</li>
+  <li routerLink="/products">Tüm ürünler</li>
+    <li (click)="setCurrentOrder(order)"
+    routerLink="/orders/{{order.id}}"
+     *ngFor="let order of orders" 
+    [class]="getCurrentOrderClass(order)">{{order.id}}</li>
   </ul>
+
+  <h5 *ngIf="currentOrder">{{currentOrder.id}} seçildi</h5>
