@@ -1,0 +1,23 @@
+<div *ngIf="dataLoaded == false" class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="mb-3">
+  <table *ngIf="dataLoaded == true" class="table">
+    <thead>
+      <tr>
+        <th>Departman Adı</th>
+        <th>Departman Alanı</th>
+        <th>Departman bütçesi</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let department of departments">
+        <td>{{ department.name |uppercase}}</td>
+        <td>{{ department.area}}</td>
+        <td>{{ department.budget |currency:"₺"}}</td>
+        <td>
+      </tr>
+    </tbody>
+    
+  </table>

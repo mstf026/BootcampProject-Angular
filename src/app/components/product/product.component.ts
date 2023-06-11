@@ -1,3 +1,4 @@
+import { CartService } from './../../services/cart.service';
 import { ProductService } from './../../services/product.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -16,7 +17,9 @@ export class ProductComponent implements OnInit {
 
 
   constructor(private productService: ProductService,
-    private activatedRoute:ActivatedRoute, private toastrService:ToastrService) {}
+    private activatedRoute:ActivatedRoute,
+     private toastrService:ToastrService,
+     private cartService:CartService) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
@@ -44,6 +47,7 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(product:Product){
-    this.toastrService.success("Sepete eklendi",product.name)
+    this.toastrService.success("Sepete eklendi",product.name);
+    this.cartService.addToCart(product);
   }
 }

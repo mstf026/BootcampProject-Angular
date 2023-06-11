@@ -1,0 +1,27 @@
+<div *ngIf="dataLoaded == false" class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="mb-3">
+  <table *ngIf="dataLoaded == true" class="table">
+    <thead>
+      <tr>
+        <th>Alt Parça Id</th>
+        <th>Alt Parça Adı</th>
+        <th>Stok</th>
+        <th>Maliyet</th>
+        <th>Bağlı İstasyon Id</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let subpiece of subpieces">
+        <td>{{ subpiece.id}}</td>
+        <td>{{ subpiece.name}}</td>
+        <td>{{ subpiece.unitsInStock}}</td>
+        <td>{{ subpiece.cost |currency:"₺"}}</td>
+        <td>{{ subpiece.stationId}}</td>
+        <td>
+      </tr>
+    </tbody>
+    
+  </table>

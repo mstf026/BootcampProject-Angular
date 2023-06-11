@@ -1,9 +1,9 @@
 <ul class="list-group">
-  <li routerLink="/products">Tüm ürünler</li>
+  <li>Tüm Siparişler</li>
     <li (click)="setCurrentOrder(order)"
     routerLink="/orders/{{order.id}}"
      *ngFor="let order of orders" 
-    [class]="getCurrentOrderClass(order)">{{order.id}}</li>
+    [class]="getCurrentOrderClass(order)">Sipariş Id: {{order.id}}</li>
   </ul>
 
-  <h5 *ngIf="currentOrder">{{currentOrder.id}} seçildi</h5>
+  <h5 *ngIf="currentOrder">Id:{{currentOrder.id}} numaralı sipariş seçildi</h5>

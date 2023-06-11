@@ -1,0 +1,112 @@
+<div class="content">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header"><h5 class="title">Ürün ekle</h5></div>
+      <div class="card-body">
+        <form [formGroup]="productAddForm">
+          <div class="mb-3">
+            <label for="name">Ürün Adı</label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="name"
+                formControlName="name"
+                class="form-control"
+                placeholder="Ürün adı"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="modelNumber">Model Numarası</label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="modelNumber"
+                formControlName="modelNumber"
+                class="form-control"
+                placeholder="Model Numarası"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="type">Ürün türü</label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="type"
+                formControlName="type"
+                class="form-control"
+                placeholder="Ürün türü"
+              />
+            </div>
+          </div>
+        </form>
+        <form [formGroup]="productSubpieceAddForm">
+          <div class="mb-3">
+            <label for="type">1. Alt parça</label>
+            <div class="form-group">
+              <input
+                type="number"
+                id="subpieceId"
+                formControlName="subpieceId1"
+                class="form-control"
+                placeholder="Alt parça"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="type">2. Alt parça</label>
+            <div class="form-group">
+              <input
+                type="number"
+                id="subpieceId"
+                formControlName="subpieceId2"
+                class="form-control"
+                placeholder="Alt parça"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="type">3. Alt parça</label>
+            <div class="form-group">
+              <input
+                type="number"
+                id="subpieceId"
+                formControlName="subpieceId3"
+                class="form-control"
+                placeholder="Alt parça"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="type">4. Alt parça</label>
+            <div class="form-group">
+              <input
+                type="number"
+                id="subpieceId"
+                formControlName="subpieceId4"
+                class="form-control"
+                placeholder="Alt parça"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="type">5. Alt parça</label>
+            <div class="form-group">
+              <input
+                type="number"
+                id="subpieceId"
+                formControlName="subpieceId5"
+                class="form-control"
+                placeholder="Alt parça"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+      </div>
+    </div>
+  </div>
+</div>
