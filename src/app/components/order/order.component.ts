@@ -9,7 +9,7 @@ import { OrderService } from 'src/app/services/order.service';
 })
 export class OrderComponent implements OnInit {
   orders: Order[] = [];
-  currentOrder: Order;
+  dataLoaded = false;
   constructor(private orderService: OrderService) {}
   ngOnInit(): void {
     this.getOrders()
@@ -17,20 +17,9 @@ export class OrderComponent implements OnInit {
 
   getOrders() {
     this.orderService.getOrders().subscribe((response) => {
-      this.orders = response.data
+      this.orders = response.data;
+      this.dataLoaded = true;
     });
   }
 
-  setCurrentOrder(order: Order) {
-    this.currentOrder = order;
-  }
-
-  getCurrentOrderClass(order:Order){
-    if(order == this.currentOrder){
-      return "list-group-item active"
-    }
-    else{
-      return "list-group-item"
-    }
-  }
 }
