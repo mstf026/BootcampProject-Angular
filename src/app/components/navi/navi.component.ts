@@ -1,3 +1,4 @@
+import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 
 @Component({
@@ -6,9 +7,31 @@ import { Component, Inject, OnInit } from '@angular/core';
   styleUrls: ['./navi.component.css'],
 })
 export class NaviComponent implements OnInit {
-  constructor() {}
+  constructor(@Inject(DOCUMENT) private document: Document) {}
 
   ngOnInit(): void {}
 
-  
+  redirectToHome(): void {
+    this.document.location.href = 'http://localhost:4200';
+  }
+
+  redirectToManufacture(): void {
+    this.document.location.href = 'http://localhost:4200/manufactures';
+  }
+
+  redirectToAddProduct(): void {
+    this.document.location.href = 'http://localhost:4200/products/add';
+  }
+
+  redirectToGetOrders(): void {
+    this.document.location.href = 'http://localhost:4200/orders/';
+  }
+
+  redirectToGetDepartments(): void {
+    this.document.location.href = 'http://localhost:4200/departments/';
+  }
+
+  redirectToGetSubpieces(): void {
+    this.document.location.href = 'http://localhost:4200/subpieces/';
+  }
 }
