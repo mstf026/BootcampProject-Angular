@@ -12,15 +12,15 @@ export class NaviComponent implements OnInit {
   ngOnInit(): void {}
 
   redirectToHome(): void {
-    this.document.location.href = 'http://localhost:4200';
+    this.document.location.href = 'https://brave-meadow-0910b9510.3.azurestaticapps.net/';
   }
 
   redirectToManufacture(): void {
-    this.document.location.href = 'http://localhost:4200/manufactures';
+    this.document.location.href = 'https://brave-meadow-0910b9510.3.azurestaticapps.net/manufactures';
   }
 
   redirectToAddProduct(): void {
-    this.document.location.href = 'http://localhost:4200/products/add';
+    this.document.location.href = 'https://brave-meadow-0910b9510.3.azurestaticapps.net/products/add';
   }
 
   redirectToGetOrders(): void {
