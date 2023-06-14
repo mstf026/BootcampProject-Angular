@@ -1,6 +1,6 @@
 {
     "routes": {
-      "api/*": {
+      "https://myboschproject2612.azurewebsites.net/api/*": {
         "allowedRoles": ["anonymous"],
         "allowedMethods": ["GET", "POST"]
       },
