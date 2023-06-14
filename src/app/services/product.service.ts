@@ -10,17 +10,17 @@ import { ResponseModel } from '../models/responseModel';
 })
 export class ProductService {
 
-  apiUrl = "https://myboschproject2612.azurewebsites.net/api/"
+  apiUrl:string = "https://myboschproject2612.azurewebsites.net/api/"
 
   constructor(private httpClient:HttpClient) { }
 
   getProducts():Observable<ListResponseModel<Product>>{
-    let newPath = this.apiUrl + "products/getall"
+    const newPath = this.apiUrl + "products/getall"
     return this.httpClient.get<ListResponseModel<Product>>(newPath);
   }
 
   getProductById(id:number):Observable<ListResponseModel<Product>>{
-    let newPath = this.apiUrl + "products/getbyid"
+    const newPath = this.apiUrl + "products/getbyid"
     return this.httpClient.get<ListResponseModel<Product>>(newPath);
   }
 

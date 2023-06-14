@@ -9,12 +9,12 @@ import { Department } from '../models/department';
 })
 export class DepartmentService {
 
-  apiUrl = "https://myboschproject2612.azurewebsites.net/api/";
+  apiUrl:string = "https://myboschproject2612.azurewebsites.net/api/";
   constructor(private httpClient: HttpClient) { }
 
 
   getDepartments():Observable<ListResponseModel<Department>>{
-    let newPath = this.apiUrl + "departments/getall"
+    const newPath = this.apiUrl + "departments/getall"
     return this.httpClient.get<ListResponseModel<Department>>(newPath);
   }
 }
