@@ -9,7 +9,7 @@ import { Order } from '../models/order';
 })
 export class OrderService {
 
-  apiUrl = "https://localhost:7094/api/"
+  apiUrl = "https://myboschproject2612.azurewebsites.net/api/"
 
   constructor(private httpClient:HttpClient) { }
 
