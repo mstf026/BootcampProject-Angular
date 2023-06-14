@@ -10,7 +10,7 @@ import { ResponseModel } from '../models/responseModel';
 })
 export class ProductService {
 
-  apiUrl = "https://myboschproject2612.azurewebsites.net/api/"
+  apiUrl = "myboschproject2612.azurewebsites.net/api/"
 
   constructor(private httpClient:HttpClient) { }
 
