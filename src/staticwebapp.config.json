@@ -4,7 +4,7 @@
         "allowedRoles": ["anonymous"],
         "allowedMethods": ["GET", "POST"]
       },
-      "/*": {
+      "https://myboschproject2612.azurewebsites.net/*": {
         "allowedRoles": ["anonymous"],
         "allowedMethods": ["GET"]
       }
