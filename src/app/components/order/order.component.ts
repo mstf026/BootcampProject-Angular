@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Order } from 'src/app/models/order';
 import { OrderService } from 'src/app/services/order.service';
 
@@ -10,7 +11,8 @@ import { OrderService } from 'src/app/services/order.service';
 export class OrderComponent implements OnInit {
   orders: Order[] = [];
   dataLoaded = false;
-  constructor(private orderService: OrderService) {}
+  constructor(private orderService: OrderService,
+    private toastrService: ToastrService) {}
   ngOnInit(): void {
     this.getOrders()
   }
@@ -22,4 +24,11 @@ export class OrderComponent implements OnInit {
     });
   }
 
+  deleteOrder(order: Order){
+    this.orderService.delete(order).subscribe(response=>{
+      this.toastrService.success(response.message,"Başarılı")
+    },responseError=>{
+      this.toastrService.error(responseError.error);
+    })
+  }
 }

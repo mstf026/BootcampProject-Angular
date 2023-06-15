@@ -22,4 +22,9 @@ export class OrderService {
     let newPath = this.apiUrl + "orders/add"
     return this.httpClient.post<ResponseModel>(newPath,order);
   }
+
+  delete(order:Order):Observable<ResponseModel>{
+    let newPath = this.apiUrl + "orders/delete"
+    return this.httpClient.post<ResponseModel>(newPath,order);
+  }
 }

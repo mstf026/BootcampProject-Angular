@@ -3,6 +3,6 @@ export interface Subpiece{
     name:string;
     unitsInStock:number;
     cost:number;
-    uniqueNumber:string;
-    stationId:string;
+    uniqueNumber:number;
+    stationId:number;
 }

@@ -7,6 +7,7 @@ import { ManufactureAddComponent } from './components/manufacture-add/manufactur
 import { DepartmentComponent } from './components/department/department.component';
 import { SubpieceComponent } from './components/subpiece/subpiece.component';
 import { OrderAddComponent } from './components/order-add/order-add.component';
+import { SubpieceAddComponent } from './components/subpiece-add/subpiece-add.component';
 
 const routes: Routes = [
   {path:"",pathMatch:"full",component:ProductComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:"orders/add",component:OrderAddComponent},
   {path:"manufactures",component:ManufactureAddComponent},
   {path:"departments",component:DepartmentComponent},
-  {path:"subpieces",component:SubpieceComponent}
+  {path:"subpieces",component:SubpieceComponent},
+  {path:"subpieces/add",component:SubpieceAddComponent}
   
 ];
 

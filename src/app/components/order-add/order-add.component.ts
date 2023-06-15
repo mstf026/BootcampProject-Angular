@@ -17,10 +17,10 @@ export class OrderAddComponent implements OnInit{
     private toastrService:ToastrService) { }
 
   ngOnInit(): void {
-    this.createProductAddForm();
+    this.createOrderAddForm();
   }
 
-  createProductAddForm(){
+  createOrderAddForm(){
       this.orderAddForm = this.formBuilder.group({
         id:["",[Validators.required]],
         modelNumber:["",Validators.required,Validators.maxLength(3)],

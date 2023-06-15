@@ -50,4 +50,12 @@ export class ProductComponent implements OnInit {
     this.toastrService.success("Sepete eklendi",product.name);
     this.cartService.addToCart(product);
   }
+
+  deleteProduct(product: Product){
+    this.productService.delete(product).subscribe(response=>{
+      this.toastrService.success(response.message,"Başarılı")
+    },responseError=>{
+      this.toastrService.error(responseError.error);
+    })
+  }
 }

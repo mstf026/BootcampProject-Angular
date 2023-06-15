@@ -44,4 +44,12 @@ export class SubpieceComponent {
       this.dataLoaded = true;
     })
   }
+
+  deleteSubpiece(subpiece: Subpiece){
+    this.subpieceService.delete(subpiece).subscribe(response=>{
+      this.toastrService.success(response.message,"Başarılı")
+    },responseError=>{
+      this.toastrService.error(responseError.error);
+    })
+  }
 }

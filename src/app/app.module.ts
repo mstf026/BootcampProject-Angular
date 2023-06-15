@@ -18,6 +18,7 @@ import { SubpieceComponent } from './components/subpiece/subpiece.component';
 import { ManufactureAddComponent } from './components/manufacture-add/manufacture-add.component';
 import { DepartmentComponent } from './components/department/department.component';
 import { OrderAddComponent } from './components/order-add/order-add.component';
+import { SubpieceAddComponent } from './components/subpiece-add/subpiece-add.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { OrderAddComponent } from './components/order-add/order-add.component';
     SubpieceComponent,
     ManufactureAddComponent,
     DepartmentComponent,
-    OrderAddComponent
+    OrderAddComponent,
+    SubpieceAddComponent
   ],
   imports: [
     BrowserModule,
