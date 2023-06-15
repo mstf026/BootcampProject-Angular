@@ -17,6 +17,7 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
 import { SubpieceComponent } from './components/subpiece/subpiece.component';
 import { ManufactureAddComponent } from './components/manufacture-add/manufacture-add.component';
 import { DepartmentComponent } from './components/department/department.component';
+import { OrderAddComponent } from './components/order-add/order-add.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DepartmentComponent } from './components/department/department.componen
     ProductAddComponent,
     SubpieceComponent,
     ManufactureAddComponent,
-    DepartmentComponent
+    DepartmentComponent,
+    OrderAddComponent
   ],
   imports: [
     BrowserModule,
