@@ -2,11 +2,18 @@
   "routes": [
     {
       "route": "/api/*",
-      "methods": ["PUT", "POST", "PATCH", "DELETE"],
-      "allowedRoles": ["anonymous"]
+      "allowedRoles": ["anonymous", "authenticated"],
+      "rewrite": "/api/{*}"
+    },
+    {
+      "route": "/departments",
+      "allowedRoles": ["anonymous", "authenticated"],
+      "rewrite": "/api/departments/getall"
+    },
+    {
+      "route": "/*",
+      "allowedRoles": ["anonymous", "authenticated"],
+      "serve": "/index.html"
     }
-
-    
   ]
-
 }
