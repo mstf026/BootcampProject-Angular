@@ -3,11 +3,11 @@
     {
       "route": "/api/*",
       "methods": ["PUT", "POST", "PATCH", "DELETE"],
-      "allowedRoles": ["administrator"]
+      "allowedRoles": ["anonymous"]
     },
     {
       "route": "/api/*",
-      "allowedRoles": ["authenticated"]
+      "allowedRoles": ["anonymous"]
     }
     
   ],
