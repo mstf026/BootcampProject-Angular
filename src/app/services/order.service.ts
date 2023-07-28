@@ -10,7 +10,7 @@ import { ResponseModel } from '../models/responseModel';
 })
 export class OrderService {
 
-  apiUrl:string = "https://localhost:7094/api/"
+  apiUrl:string = "http://myboschproject2612.azurewebsites.net/api/"
 
   constructor(private httpClient:HttpClient) { }
 

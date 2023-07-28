@@ -10,7 +10,7 @@ import { TokenModel } from '../models/tokenModel';
 })
 export class AuthService {
 
-  apiUrl = 'https://localhost:7094/api/auth/';
+  apiUrl = 'http://myboschproject2612.azurewebsites.net/api/auth/';
   constructor(private httpClient:HttpClient) { }
 
   login(loginModel:LoginModel){

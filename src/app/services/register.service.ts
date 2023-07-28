@@ -9,7 +9,7 @@ import { ResponseModel } from '../models/responseModel';
 })
 export class RegisterService {
 
-  apiUrl:string = "https://localhost:7094/api/auth/"
+  apiUrl:string = "http://myboschproject2612.azurewebsites.net/api/auth/"
   constructor(private httpClient:HttpClient) { }
 
   register(registerModel:RegisterModel):Observable<ResponseModel>{
