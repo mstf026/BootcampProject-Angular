@@ -8,7 +8,7 @@ import { ResponseModel } from '../models/responseModel';
 })
 export class ManufactureService {
 
-  apiUrl:string = "https://myboschproject2612.azurewebsites.net/api/ordermanufactures/manufacture/"
+  apiUrl:string = "https://localhost:7094/api/ordermanufactures/manufacture/"
 
   constructor(private httpClient: HttpClient) { }
 

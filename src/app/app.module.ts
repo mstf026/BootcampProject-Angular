@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
 
@@ -19,6 +19,10 @@ import { ManufactureAddComponent } from './components/manufacture-add/manufactur
 import { DepartmentComponent } from './components/department/department.component';
 import { OrderAddComponent } from './components/order-add/order-add.component';
 import { SubpieceAddComponent } from './components/subpiece-add/subpiece-add.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { RegisterComponent } from './components/register/register.component';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +37,9 @@ import { SubpieceAddComponent } from './components/subpiece-add/subpiece-add.com
     ManufactureAddComponent,
     DepartmentComponent,
     OrderAddComponent,
-    SubpieceAddComponent
+    SubpieceAddComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +52,9 @@ import { SubpieceAddComponent } from './components/subpiece-add/subpiece-add.com
       positionClass:"toast-bottom-right"
     })
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

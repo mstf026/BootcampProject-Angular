@@ -8,17 +8,22 @@ import { DepartmentComponent } from './components/department/department.componen
 import { SubpieceComponent } from './components/subpiece/subpiece.component';
 import { OrderAddComponent } from './components/order-add/order-add.component';
 import { SubpieceAddComponent } from './components/subpiece-add/subpiece-add.component';
+import { LoginComponent } from './components/login/login.component';
+import { LoginGuard } from './guards/login.guard';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   {path:"",pathMatch:"full",component:ProductComponent},
   {path:"products",component:ProductComponent},
-  {path:"products/add",component:ProductAddComponent},
   {path:"orders",component:OrderComponent},
   {path:"orders/add",component:OrderAddComponent},
   {path:"manufactures",component:ManufactureAddComponent},
   {path:"departments",component:DepartmentComponent},
   {path:"subpieces",component:SubpieceComponent},
-  {path:"subpieces/add",component:SubpieceAddComponent}
+  {path:"subpieces/add",component:SubpieceAddComponent},
+  {path:"products/add", component:ProductAddComponent, canActivate:[LoginGuard]},
+  {path:"login",component:LoginComponent},
+  {path:"register",component:RegisterComponent}
   
 ];
 

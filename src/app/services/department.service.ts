@@ -9,7 +9,7 @@ import { Department } from '../models/department';
 })
 export class DepartmentService {
 
-  apiUrl:string = "https://myboschproject2612.azurewebsites.net/api/";
+  apiUrl:string = "https://localhost:7094/api/";
   constructor(private httpClient: HttpClient) { }
 
 
