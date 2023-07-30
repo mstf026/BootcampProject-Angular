@@ -16,11 +16,11 @@ const routes: Routes = [
   {path:"",pathMatch:"full",component:ProductComponent},
   {path:"products",component:ProductComponent},
   {path:"orders",component:OrderComponent},
-  {path:"orders/add",component:OrderAddComponent},
+  {path:"orders/add",component:OrderAddComponent, canActivate:[LoginGuard]},
   {path:"manufactures",component:ManufactureAddComponent},
   {path:"departments",component:DepartmentComponent},
   {path:"subpieces",component:SubpieceComponent},
-  {path:"subpieces/add",component:SubpieceAddComponent},
+  {path:"subpieces/add",component:SubpieceAddComponent, canActivate:[LoginGuard]},
   {path:"products/add", component:ProductAddComponent, canActivate:[LoginGuard]},
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent}
