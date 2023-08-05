@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Subpiece } from 'src/app/models/subpiece';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-subpiece',
@@ -18,7 +19,8 @@ export class SubpieceComponent {
 
   constructor(private subpieceService: SubpieceService,
     private activatedRoute:ActivatedRoute,
-     private toastrService:ToastrService) {}
+     private toastrService:ToastrService,
+     private authService:AuthService) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
@@ -51,5 +53,15 @@ export class SubpieceComponent {
     },responseError=>{
       this.toastrService.error(responseError.error);
     })
+  }
+
+  
+  isAuthenticated(){
+    if(this.authService.isAuthenticated()){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 }

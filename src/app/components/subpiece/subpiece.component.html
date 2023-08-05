@@ -21,7 +21,7 @@
         <td>{{ subpiece.cost |currency:"₺"}}</td>
         <td>{{ subpiece.stationId}}</td>
         <td>
-          <button (click)="deleteSubpiece(subpiece)" class="btn btn-success">Ürünü sil</button>
+          <button (click)="deleteSubpiece(subpiece)" class="btn btn-success" *ngIf="isAuthenticated()">Ürünü sil</button>
         </td>
       </tr>
     </tbody>

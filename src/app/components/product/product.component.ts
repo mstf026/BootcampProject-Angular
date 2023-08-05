@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/models/product';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-product',
@@ -19,7 +20,8 @@ export class ProductComponent implements OnInit {
   constructor(private productService: ProductService,
     private activatedRoute:ActivatedRoute,
      private toastrService:ToastrService,
-     private cartService:CartService) {}
+     private cartService:CartService,
+     private authService:AuthService) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
@@ -57,5 +59,14 @@ export class ProductComponent implements OnInit {
     },responseError=>{
       this.toastrService.error(responseError.error);
     })
+  }
+
+  isAuthenticated(){
+    if(this.authService.isAuthenticated()){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 }

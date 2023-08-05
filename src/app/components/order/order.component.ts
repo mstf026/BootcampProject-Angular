@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { Order } from 'src/app/models/order';
+import { AuthService } from 'src/app/services/auth.service';
 import { OrderService } from 'src/app/services/order.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class OrderComponent implements OnInit {
   orders: Order[] = [];
   dataLoaded = false;
   constructor(private orderService: OrderService,
-    private toastrService: ToastrService) {}
+    private toastrService: ToastrService,
+    private authService:AuthService) {}
   ngOnInit(): void {
     this.getOrders()
   }
@@ -30,5 +32,14 @@ export class OrderComponent implements OnInit {
     },responseError=>{
       this.toastrService.error(responseError.error);
     })
+  }
+
+  isAuthenticated(){
+    if(this.authService.isAuthenticated()){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 }

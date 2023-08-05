@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Department } from 'src/app/models/department';
+import { AuthService } from 'src/app/services/auth.service';
 import { DepartmentService } from 'src/app/services/department.service';
 
 @Component({
@@ -11,7 +12,9 @@ export class DepartmentComponent implements OnInit{
 
   departments:Department[];
   dataLoaded = false;
-  constructor(private departmentService: DepartmentService){}
+  constructor(
+    private departmentService: DepartmentService,
+    private authService:AuthService){}
   ngOnInit(): void {
     this.getDepartments()
   }
@@ -23,4 +26,12 @@ export class DepartmentComponent implements OnInit{
     })
   }
 
+  isAuthenticated(){
+    if(this.authService.isAuthenticated()){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 }

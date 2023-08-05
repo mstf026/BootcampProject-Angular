@@ -12,7 +12,7 @@ export class ProductAddComponent implements OnInit {
   
   productAddForm: FormGroup;
   productSubpieceAddForm: FormGroup;
- subpieceId:number[]=[];
+  subpieceId:number[]=[];
  
   constructor(private formBuilder: FormBuilder,
     private productService: ProductService,
