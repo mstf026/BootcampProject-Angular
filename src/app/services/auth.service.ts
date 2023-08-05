@@ -25,4 +25,14 @@ export class AuthService {
       return false;
     }
   }
+
+  deleteToken(){
+    if(localStorage.getItem("token")!=null){
+      localStorage.clear();
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 }

@@ -1,5 +1,5 @@
 import { SubpieceService } from './../../services/subpiece.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Subpiece } from 'src/app/models/subpiece';
@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './subpiece.component.html',
   styleUrls: ['./subpiece.component.css']
 })
-export class SubpieceComponent {
+export class SubpieceComponent implements OnInit{
 
   subpieces: Subpiece[] = [];
   dataLoaded = false;
